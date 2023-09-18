@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'travello.apps.TravelloConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,11 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_project',
+        'USER': 'postgres',
+        'PASSWORD':'1981',
+        'HOST':'localhost'
     }
 }
 
@@ -114,6 +118,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+#..................start  added maually ...................
 import os
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[
@@ -123,6 +129,10 @@ STATICFILES_DIRS=[
 ]
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')
 
+MEDIA_URL ='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+#........................ end added maually.............................
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
