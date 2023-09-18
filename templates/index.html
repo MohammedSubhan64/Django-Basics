@@ -248,27 +248,16 @@
 			<div class="row destinations_row">
 				<div class="col">
 					<div class="destinations_container item_grid">
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="static/images/destination_1.jpg" alt="">
-								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Bali</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-						{% for dist in dists %}
-							
-						
+						{% for dist in dists %}	
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
 								<!-- <img src="{{baseUrl}}/{{dist1.img}}" alt=""> -->
 								<img src="{{dist.img}}" alt="">
+								{% if dist.offer %}
+									
+								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+								{% endif %}
 							</div>
 							<div class="destination_content">
 								<div class="destination_title"><a href="destinations.html">{{dist.name}}</a></div>
